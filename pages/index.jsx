@@ -8,7 +8,7 @@ function Home({ data }) {
   const [countries, setCountries] = useState(data);
 
   async function search(text) {
-    console.log("text",text)
+    
     const filtered = hardCountries.filter((val) => {
       return val.name.includes(text);
     });
