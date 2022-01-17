@@ -8,11 +8,14 @@ export default function Filter({ countries, onFilter, onSearch }) {
           <div className="col">
             <Autocomplete
               options={countries.map((country) => country.name)}
+              onChange={(_,value)=>{
+                console.log("e value",value)
+                onSearch(value)}}
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  value={(val) => {
-                    console.log(val);
+                  onChange={(event) => {
+                    onSearch(event.target.value);
                   }}
                   label="Search for a country..."
                 />

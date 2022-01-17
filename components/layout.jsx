@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import { Box, Container } from "@mui/material";
-export default function Layout({ children }) {
+export default function Layout({ children,mode ,}) {
   return (
     <>
       <Box xs={{ flexGrow: 1 }}>

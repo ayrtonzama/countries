@@ -1,10 +1,17 @@
 import "../styles/globals.scss";
 import Layout from "../components/Layout";
-import { ThemeProvider } from '@mui/material/styles';
-import {themeOptions} from '../styles/ThemeOptions'
+import { ThemeProvider } from "@mui/material/styles";
+import { themeOptionsDark, themeOptionsLight } from "../styles/ThemeOptions";
+import {useState} from 'react'
 function MyApp({ Component, pageProps }) {
-  
-  return <ThemeProvider theme={themeOptions}><Layout><Component {...pageProps} /></Layout></ThemeProvider>;
+  const [mode,setMode] = useState('light')
+  return (
+    <ThemeProvider theme={mode=='light'?themeOptionsLight:themeOptionsDark}>
+      <Layout themeMode={mode} >
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;
