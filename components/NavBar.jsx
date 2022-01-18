@@ -15,7 +15,7 @@ export default function NavBar() {
         <Typography variant="h5" sx={{ flexGrow: 1 }}>
           Where in the world?
         </Typography>
-        <Button variant="text" onClick={themeToggle} color='primary' >
+        <Button variant="text" onClick={themeToggle}  >
           {theme.palette.mode == "light" ? "Dark" : "Light"} Mode
         </Button>
       </Toolbar>

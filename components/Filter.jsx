@@ -7,9 +7,11 @@ import {
   InputLabel,
   Grid,
 } from "@mui/material";
-
+import { useTheme } from '@mui/material/styles';
+import  CustomInputField from "./CustomInputField";
 const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 export default function Filter({ countries, onFilter, onSearch, filter }) {
+  const theme=useTheme()
   return (
     <>
       <div className="filter-container">
@@ -21,24 +23,24 @@ export default function Filter({ countries, onFilter, onSearch, filter }) {
                 onSearch(value);
               }}
               renderInput={(params) => (
-                <TextField
-                  {...params}
-                  variant='filled'
-                  onChange={(event) => {
-                    onSearch(event.target.value);
-                  }}
-                  label="Search for a country..."
+                <CustomInputField onChange={(event) => {
+                  
+                  onSearch(event.target.value);
+                }} params={params}
+                label="Search for a country..."
                 />
+            
               )}
             ></Autocomplete>
           </Grid>
           <Grid item xs={4}></Grid>
           <Grid item xs={4}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">
+              <InputLabel id="region-label">
                 Filter by Region
               </InputLabel>
               <Select
+              className={theme.palette.mode+'-field'}
                 labelId="demo-simple-select-label"
                 value={filter}
                 label="Region"

@@ -6,9 +6,7 @@ export default function CountryCard({ country }) {
       <Link href={"/country/" + country.name}>
         <Card
           sx={{ flex: 1,height:'100%' }}
-          onClick={() => {
-            console.log(country.name);
-          }}
+         
           raised
         >
           <CardMedia
@@ -25,7 +23,7 @@ export default function CountryCard({ country }) {
               <strong>Region:</strong> {country.region}
             </Typography>
             <Typography>
-              <strong>Region:</strong> {country.capital}
+              <strong>Capital:</strong> {country.capital}
             </Typography>
           </CardContent>
         </Card>
