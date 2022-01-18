@@ -32,7 +32,7 @@ function Home({ data }) {
         ></Filter>
       </div>
 
-      <Grid container columnSpacing={{xs:2 ,md:4}} rowSpacing={{xs:2 ,md:4}}>
+      <Grid container columnSpacing={{xs:2 ,md:9}} rowSpacing={{xs:2 ,md:9}}>
         {countries.map((country) => (
           <Grid item xs={12} md={3} key={country.name} >
             <CountryCard country={country}></CountryCard>

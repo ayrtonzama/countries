@@ -84,14 +84,18 @@ function SingleCountry({ country }) {
 SingleCountry.getInitialProps = async (ctx) => {
   const name = ctx.query.country;
   const country = await getNamedCountries(name);
+  let countryData=country.data[0]
+  console.log(country.data)
+  countryData.languages=countryData.languages.map(val=>val.name)
   if(country.data[0].borders){
 
     const borders= await getBorderCountries(country.data[0].borders)
-    let countryData=country.data[0]
+   
     countryData.borders=borders.data.map(name=>name.name);
    
     return { country: countryData };
   }
+  
   return { country: country.data[0] };
 };
 export default SingleCountry;
