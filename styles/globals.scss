@@ -1,6 +1,13 @@
 @font-face {
   font-family: 'Nunito';
-  src: local('Nunito'), url('/fonts/NanitoSans.tff') format('tff');
+  font-style: normal;
+  font-weight: 400;
+
+  src: url('/fonts/NunitoSans-Black.tff');
+ 
+}
+body{
+  font-family: "Nunito" !important;
 }
 .filter-container{
   margin-top: 3rem;
@@ -9,9 +16,37 @@
 }
 .dark-field{
   background-color: hsl(209, 23%, 22%);
-  border:none;
+  border:none !important;
 }
 .light-field{
   background-color: hsl(0, 0%, 100%);
+  
+  border:none !important;
+  &:focus{
+    border:none !important;
+
+  }
+}
+.default-input-field{
+  border: none;
+  padding:10px 10px ;
+  
+}
+.MuiOutlinedInput-notchedOutline{
   border:none;
+}
+.dark-text{
+color: hsl(0, 0%, 100%);
+}
+.light-text{
+  
+  color: hsl(209, 23%, 22%);
+}
+.link-styles{
+  cursor:pointer;
+}
+.padding-lr{
+  margin-top: 1rem;
+  margin-left: 0rem ;
+  margin-right: 1rem ;
 }

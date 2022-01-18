@@ -6,6 +6,8 @@ export const themePallete = (mode) => (
     mode,
     ...(mode === "light"
       ? {
+        typography: {
+          fontFamily: ["Nunito"]},
           primary:{main:"hsl(0, 0%, 100%)"},
           text: { primary: "hsl(200, 15%, 8%)" },
           background: {
@@ -14,6 +16,8 @@ export const themePallete = (mode) => (
           },
         }
       : {
+        typography: {
+          fontFamily: ["Nunito"]},
           primary: {main:"hsl(209, 23%, 22%)"},
           text: { primary: "hsl(0, 0%, 100%)" },
           background: {
