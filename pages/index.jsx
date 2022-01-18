@@ -26,7 +26,7 @@ function Home({ data }) {
 
       <Grid container spacing={4}>
         {countries.map((country) => (
-          <Grid item xs={1} md={3} key={country.name}>
+          <Grid item sm={1} md={3} key={country.name}>
             <CountryCard country={country}></CountryCard>
           </Grid>
         ))}
