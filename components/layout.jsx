@@ -1,10 +1,14 @@
 import NavBar from "./NavBar";
 import { Box, Container } from "@mui/material";
-export default function Layout({ children,mode ,}) {
+import { useContext } from "react";
+import { ThemeContext } from "../hooks/ThemeContext";
+export default function Layout({ children}) {
+  const hook=useContext(ThemeContext)
+  
   return (
     <>
       <Box xs={{ flexGrow: 1 }}>
-        <NavBar></NavBar>
+        <NavBar setTheme={hook.toggleColorMode()}></NavBar>
       </Box>
       <main className="">
         <Container disableGutters={false} maxWidth="xl">

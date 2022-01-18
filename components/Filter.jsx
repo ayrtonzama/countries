@@ -14,7 +14,7 @@ export default function Filter({ countries, onFilter, onSearch, filter }) {
     <>
       <div className="filter-container">
         <Grid container direction="row" justifyContent="space-between">
-          <Grid items xs={4}>
+          <Grid item xs={4}>
             <Autocomplete
               options={countries.map((country) => country.name)}
               onChange={(_, value) => {
@@ -23,6 +23,7 @@ export default function Filter({ countries, onFilter, onSearch, filter }) {
               renderInput={(params) => (
                 <TextField
                   {...params}
+                  variant='filled'
                   onChange={(event) => {
                     onSearch(event.target.value);
                   }}
@@ -31,8 +32,8 @@ export default function Filter({ countries, onFilter, onSearch, filter }) {
               )}
             ></Autocomplete>
           </Grid>
-          <Grid items xs={4}></Grid>
-          <Grid items xs={4}>
+          <Grid item xs={4}></Grid>
+          <Grid item xs={4}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">
                 Filter by Region
@@ -44,7 +45,7 @@ export default function Filter({ countries, onFilter, onSearch, filter }) {
                 onChange={onFilter}
               >
                 {regions.map((region) => (
-                  <MenuItem value={region}>{region}</MenuItem>
+                  <MenuItem key={region} value={region}>{region}</MenuItem>
                 ))}
               </Select>
             </FormControl>

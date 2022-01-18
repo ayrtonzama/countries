@@ -5,7 +5,7 @@ export default function CountryCard({ country }) {
     <>
       <Link href={"/country/" + country.name}>
         <Card
-          sx={{ flex: 1 }}
+          sx={{ flex: 1,height:'100%' }}
           onClick={() => {
             console.log(country.name);
           }}
