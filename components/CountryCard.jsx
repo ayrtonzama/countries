@@ -14,7 +14,7 @@ export default function CountryCard({ country }) {
           <CardMedia
             component="img"
             height="240"
-            image={country.flags.png}
+            image={country.flag}
           ></CardMedia>
           <CardContent>
             <Typography variant="h5">{country.name}</Typography>
