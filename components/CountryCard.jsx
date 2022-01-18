@@ -5,16 +5,14 @@ export default function CountryCard({ country }) {
     <>
       <Link href={"/country/" + country.name}>
         <Card
-          sx={{ flex: 1 }}
-          onClick={() => {
-            console.log(country.name);
-          }}
+          sx={{ flex: 1,height:'100%' }}
+         
           raised
         >
           <CardMedia
             component="img"
             height="240"
-            image={country.flags.png}
+            image={country.flag}
           ></CardMedia>
           <CardContent>
             <Typography variant="h5">{country.name}</Typography>
@@ -25,7 +23,7 @@ export default function CountryCard({ country }) {
               <strong>Region:</strong> {country.region}
             </Typography>
             <Typography>
-              <strong>Region:</strong> {country.capital}
+              <strong>Capital:</strong> {country.capital}
             </Typography>
           </CardContent>
         </Card>

@@ -1,5 +1,17 @@
+@font-face {
+  font-family: 'Nunito';
+  src: local('Nunito'), url('/fonts/NanitoSans.tff') format('tff');
+}
 .filter-container{
   margin-top: 3rem;
   padding:4rem 0rem ;
   display:flex;
+}
+.dark-field{
+  background-color: hsl(209, 23%, 22%);
+  border:none;
+}
+.light-field{
+  background-color: hsl(0, 0%, 100%);
+  border:none;
 }

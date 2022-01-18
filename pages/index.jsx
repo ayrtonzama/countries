@@ -3,6 +3,7 @@ import getAllCountries from "../pages/api/home";
 import { Grid, Container } from "@mui/material";
 import Filter from "../components/Filter";
 import { useState } from "react";
+
 function Home({ data }) {
   const hardCountries = data;
   const [countries, setCountries] = useState(data);
@@ -24,9 +25,9 @@ function Home({ data }) {
         ></Filter>
       </div>
 
-      <Grid container spacing={4}>
+      <Grid container spacing={10}>
         {countries.map((country) => (
-          <Grid item sm={1} md={3} key={country.name}>
+          <Grid item sm={1} md={3} key={country.name} >
             <CountryCard country={country}></CountryCard>
           </Grid>
         ))}

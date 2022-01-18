@@ -3,12 +3,14 @@ import getNamedCountries from "../../pages/api/country";
 import { useRouter } from "next/router";
 import Image from "next/image";
 function SingleCountry({ country }) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
       <Grid container mt={12}>
         <Grid item md={12}>
-          <Button variant="contained" onClick={()=>router.back()}>Back</Button>
+          <Button variant="contained" onClick={() => router.back()}>
+            Back
+          </Button>
         </Grid>
         <Grid item md={6} mt={5}>
           <Image src={country.flags.png} height={400} width={600}></Image>
@@ -54,16 +56,20 @@ function SingleCountry({ country }) {
               <p>
                 <strong>Languages:</strong>
                 {country.languages.map((language) => (
-                  <span variant="body1" key={language.name}>{language.name} ,</span>
+                  <span variant="body1" key={language.name}>
+                    {language.name} ,
+                  </span>
                 ))}
               </p>
             </Grid>
             <Grid item>
-                Border Countries {country.borders?.map(border=>(<Button variant="contained">{border}</Button>))}
+              Border Countries{" "}
+              {country.borders?.map((border) => (
+                <Button variant="contained">{border}</Button>
+              ))}
             </Grid>
           </Grid>
         </Grid>
-      
       </Grid>
     </>
   );
@@ -71,7 +77,7 @@ function SingleCountry({ country }) {
 SingleCountry.getInitialProps = async (ctx) => {
   const name = ctx.query.country;
   const country = await getNamedCountries(name);
-  console.log(country.data[0]);
+
   return { country: country.data[0] };
 };
 export default SingleCountry;

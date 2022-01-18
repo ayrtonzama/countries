@@ -1,48 +1,25 @@
-import { createTheme } from '@mui/material/styles';
-export const themeOptionsDark = createTheme({
-   palette:{
-       mode:'dark',
-       primary:{
-           main:'#ffffff',
-           light:'#ffffff',
-   
-           contrastText: '#000000',
-       },
-       secondary:{
-        main:'#fafafa',
-        
-       },
-       background:{
-           default:'#eeeeee',
-           paper:'#202d36'
-       },
-       text:{
-           
-       }
-       
-   }
-})
+import { createTheme } from "@mui/material/styles";
 
-
-
-export const themeOptionsLight=createTheme({
-    palette:{
-        mode:'light',
-        primary:{
-            main:'#ffffff',
-            contrastText: '#000000',
-        },
-        secondary:{
-         main:'#fafafa',
-         dark:'#2B3743'
-        },
-        background:{
-            default:'#fafafa',
-            paper:'#ffffff'
-        },
-        text:{
-            
+export const themePallete = (mode) => (
+  {
+  palette: {
+    mode,
+    ...(mode === "light"
+      ? {
+          primary:{main:"hsl(0, 0%, 100%)"},
+          text: { primary: "hsl(200, 15%, 8%)" },
+          background: {
+            default: "hsl(0, 0%, 98%)",
+            paper: "hsl(0, 0%, 100%)",
+          },
         }
-        
-    }
-})
+      : {
+          primary: {main:"hsl(209, 23%, 22%)"},
+          text: { primary: "hsl(0, 0%, 100%)" },
+          background: {
+            default: "hsl(207, 26%, 17%)",
+            paper: "hsl(209, 23%, 22%)",
+          },
+        }),
+  },
+});
