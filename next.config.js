@@ -8,7 +8,7 @@ module.exports = withSass({
 
 module.exports = {
   images: {
-    domains: ['flagcdn.com'],
+    domains: ['flagcdn.com','upload.wikimedia.org'],
   },
   sassOptions: {
   includePaths: [path.join(__dirname, 'styles')],

@@ -1,4 +1,4 @@
 import axios from "axios"
 export default function handler(){
-    return axios.get("https://restcountries.com/v2/all")
+    return axios.get(`${process.env.NEXT_PUBLIC_API_URL}all`)
 }

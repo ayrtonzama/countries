@@ -7,7 +7,7 @@ export default function NavBar({ mode }) {
         <Typography variant="h5" sx={{ flexGrow: 1 }}>
           Where in the world?
         </Typography>
-        <Button variant="text" onClick={() => mode}>
+        <Button variant="text" onClick={() => mode} sx={{color:'black'}}>
           {mode == "light" ? "Dark" : "Light"} Mode
         </Button>
       </Toolbar>
