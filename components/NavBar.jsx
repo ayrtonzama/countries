@@ -12,7 +12,7 @@ function NavBar() {
     <AppBar className="">
       <Container disableGutters={false} maxWidth="xl">
         <Toolbar>
-          <Link href="/">
+          <Link passHref href="/">
             <Typography
               variant="h5"
               sx={{ flexGrow: 1 ,fontSize:{xs:16,md:24}}}
