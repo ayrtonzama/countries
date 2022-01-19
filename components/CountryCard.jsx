@@ -4,7 +4,7 @@ import Link from "next/link";
 function CountryCard({ country }) {
   return (
     <>
-      <Link href={"/country/" + country.name}>
+      <Link passHref href={"/country/" + country.name}>
         <Card
           elevation={1}
           sx={{ flex: 1, height: "100%" }}
