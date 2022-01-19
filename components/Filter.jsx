@@ -5,9 +5,7 @@ import {
   Grid,
   Paper,
   FormControl,
-  OutlinedInput,
-  InputLabel,
-  InputBase,
+  OutlinedInput
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CustomInputField from "./CustomInputField";
