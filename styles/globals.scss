@@ -36,11 +36,11 @@ body{
   border:none;
 }
 .dark-text{
-color: hsl(0, 0%, 100%);
+color: hsl(0, 0%, 100%) !important;
 }
 .light-text{
   
-  color: hsl(209, 23%, 22%);
+  color: hsl(209, 23%, 22%) !important;
 }
 .link-styles{
   cursor:pointer;
