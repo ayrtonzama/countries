@@ -1,69 +1,64 @@
 @font-face {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 400;
 
-  src: url('/fonts/NunitoSans-Black.ttf');
- 
+  src: url("/fonts/NunitoSans-Black.ttf");
 }
-$dark-text:hsl(209, 23%, 22%);
-$light-text:hsl(0, 0%, 100%);
-body{
- 
+$dark-text: hsl(209, 23%, 22%);
+$light-text: hsl(0, 0%, 100%);
+body {
   font-family: "Nunito" !important;
 }
-.filter-container{
+.filter-container {
   margin-top: 3rem;
-  padding:4rem 1rem ;
-  display:flex;
+  padding: 4rem 1rem;
+  display: flex;
 }
-.dark-field{
+.dark-field {
   background-color: $dark-text;
-  border:none !important;
+  border: none !important;
 }
-.light-field{
+.light-field {
   background-color: $light-text;
-  
-  border:none !important;
-  &:focus{
-    border:none !important;
 
+  border: none !important;
+  &:focus {
+    border: none !important;
   }
 }
-.default-input-field{
+.default-input-field {
   border: none;
-  padding:10px 10px ;
+  padding: 10px 10px;
   border-radius: 2rem;
-  
 }
-.MuiOutlinedInput-notchedOutline{
-  border:none;
+.MuiOutlinedInput-notchedOutline {
+  border: none;
 }
-.dark-text{
-color: $light-text !important;
+.dark-text {
+  color: $light-text !important;
 }
-.light-text{
-  
+.light-text {
   color: $dark-text !important;
 }
-.link-styles{
-  cursor:pointer;
+.link-styles {
+  cursor: pointer;
 }
-.padding-lr{
+.border-btns {
   margin-top: 1rem;
-  margin-left: 0rem ;
-  margin-right: 1rem ;
+ 
+  margin-bottom: 1rem;
+  margin-right: 1rem;
 }
-.center-content{
+.center-content {
   margin: auto;
   height: 100%;
 }
-.country-card{
+.country-card {
   height: 100%;
-  padding:1rem;
-  
+  padding: 1rem;
 }
 
-.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation{
-margin-top:0.4rem;
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation {
+  margin-top: 0.4rem;
 }

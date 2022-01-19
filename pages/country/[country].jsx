@@ -71,7 +71,7 @@ function SingleCountry({ country }) {
                   <Link passHref href={`${border}`} key={border}>
                     <Button
                       variant="contained"
-                      className="padding-lr border-btns"
+                      className="border-btns"
                     >
                       {border}
                     </Button>
