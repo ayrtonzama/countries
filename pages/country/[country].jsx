@@ -10,7 +10,7 @@ function SingleCountry({ country }) {
     <>
       <Grid container mt={12}>
         <Grid item md={12}>
-          <Link href="/">
+          <Link passHref href="/">
             <Button
               variant="contained"
               startIcon={<ArrowBackIcon />}
@@ -68,7 +68,7 @@ function SingleCountry({ country }) {
             
               <div className="justify-content-around border-container">
                 {country.borders?.map((border) => (
-                  <Link href={`${border}`} key={border}>
+                  <Link passHref href={`${border}`} key={border}>
                     <Button
                       variant="contained"
                       className="padding-lr border-btns"
