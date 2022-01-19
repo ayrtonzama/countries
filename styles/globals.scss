@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
 
-  src: url('/fonts/NunitoSans-Black.tff');
+  src: url('/fonts/NunitoSans-Black.ttf');
  
 }
 body{
@@ -30,6 +30,7 @@ body{
 .default-input-field{
   border: none;
   padding:10px 10px ;
+  border-radius: 2rem;
   
 }
 .MuiOutlinedInput-notchedOutline{
@@ -49,4 +50,10 @@ color: hsl(0, 0%, 100%) !important;
   margin-top: 1rem;
   margin-left: 0rem ;
   margin-right: 1rem ;
+}
+.center-content{
+  margin: auto;
+}
+.CountryCard{
+  height: 46vh;
 }
