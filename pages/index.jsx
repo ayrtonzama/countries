@@ -15,9 +15,9 @@ function Home({ data }) {
   const [regionFilter, setRegion] = useState(null);
 
   async function searchRegion(region) {
-    console.log("in",region.target.value)
+   
     if(region.target.value!=='World'){
-      console.log("in here")
+     
 
       let results=await getRegion(region.target.value)
       const remapping=results.data.map(result=>{
@@ -66,7 +66,7 @@ function Home({ data }) {
           rowSpacing={{ xs: 2, md: 9 }}
         >
           {countries.map((country) => (
-            <Grid item xs={12} md={3} key={country.name}>
+            <Grid item xs={12} md={3} sm={4} key={country.name}>
               <div className="CountryCard">
                 <CountryCard country={country}></CountryCard>
               </div>

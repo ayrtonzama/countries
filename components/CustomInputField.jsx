@@ -11,7 +11,7 @@ export default function CustomInputField({
 }) {
   return (
     <Paper elevation={2} sx={{ display: "flex" }}>
-      <SearchIcon sx={{ margin: "auto", marginLeft: 1 }} />
+      <SearchIcon sx={{ margin: "auto", marginLeft: 2 ,marginRight:2}} />
       <InputBase
         inputProps={params.inputProps}
         fullWidth

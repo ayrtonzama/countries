@@ -5,7 +5,7 @@ export default function CountryCard({ country }) {
     <>
       <Link href={"/country/" + country.name} >
         <Card
-        elevation={2}
+        elevation={1}
           sx={{ flex: 1,height:'100%' }}
           className="link-styles"
           raised
@@ -16,7 +16,7 @@ export default function CountryCard({ country }) {
             alt={country.name}
             image={country.flag}
           ></CardMedia>
-          <CardContent>
+          <CardContent sx={{padding:'1rem'}}>
             <Typography variant="h5">{country.name}</Typography>
             <br/>
             <Typography>

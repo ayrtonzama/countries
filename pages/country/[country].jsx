@@ -20,11 +20,11 @@ function SingleCountry({ country }) {
           <Image src={country.flags.png} height={400} width={600} alt={country.name}></Image>
         </Grid>
         <Grid item md={6} mt={5}>
-          <Grid container >
-            <Grid item md={12}>
+          <Grid container  className="content-text">
+            <Grid item md={12} xs={12}>
               <Typography variant="h4">{country.name}</Typography>
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={6} xs={12}>
               <p>
                 <strong>Native Name: </strong>
                 {country.nativeName}
@@ -46,7 +46,7 @@ function SingleCountry({ country }) {
                 {country.capital}
               </p>
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={6} xs={12}>
               <p>
                 <strong>Top Level Domain: </strong>
                 {country.topLevelDomain}
@@ -63,7 +63,7 @@ function SingleCountry({ country }) {
                 
               </p>
             </Grid>
-            <Grid item md={12} sx={{marginTop:4}}>
+            <Grid item md={12} xs={12} sx={{marginTop:4}}>
               <strong>Border Countries</strong>
               <br />
               <div className="justify-content-around border-container">
@@ -85,7 +85,7 @@ SingleCountry.getInitialProps = async (ctx) => {
   const name = ctx.query.country;
   const country = await getNamedCountries(name);
   let countryData=country.data[0]
-  console.log(country.data)
+
   countryData.languages=countryData.languages.map(val=>val.name)
   if(country.data[0].borders){
 

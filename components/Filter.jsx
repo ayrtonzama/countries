@@ -43,30 +43,28 @@ export default function Filter({
           <Grid item sm={4} xs={12}></Grid>
           <Grid item sm={2} xs={12} sx={{ marginTop: 2 }}>
             <Paper elevation={2}>
-              <FormControl fullWidth>
+              <FormControl fullWidth >
                 <Select
+                id="select-region"
                   sx={{ outline: "none", border: "none" }}
                   fullWidth
                   displayEmpty
                   onChange={onFilter}
-                  labelId="select-region"
-                  value={filter}
+                 
+                 value="null"
                   variant="outlined"
                   outline="none"
                   placeholder="Filter to Region"
                   input={<OutlinedInput />}
                   renderValue={(selected) => {
-                    if (selected=== null) {
-                      return <em>Filter to Region</em>;
-                    }
+                   
+                      return <span>Filter to Region</span>;
+                    
 
-                    return selected.join(", ");
                   }}
                   inputProps={{ "aria-label": "Without label" }}
                 >
-                  <MenuItem disabled value={null}>
-                    <em>Filter to Region</em>
-                  </MenuItem>
+            
                   {regions.map((region) => (
                     <MenuItem key={region} value={region}>
                       {region}
