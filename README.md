@@ -1,6 +1,6 @@
 # Countries
 
-Countries is a next js front-end displaying data from the [rest country api](https://restcountries.com/#api-endpoints-v2).
+Countries is a [Next.js](https://nextjs.org/) front-end displaying data from the [rest country api](https://restcountries.com/#api-endpoints-v2).
 
 ## Installation
 
@@ -43,3 +43,5 @@ run on a separate terminal
 npm run cypress:open
 ```
 
+## Side Note
+* Region section uses version 3 of api because during development restcountry api regional endpoint was returning 404.
