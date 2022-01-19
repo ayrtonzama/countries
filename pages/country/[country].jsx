@@ -66,11 +66,11 @@ function SingleCountry({ country }) {
             <Grid item md={12} sx={{marginTop:4}}>
               <strong>Border Countries</strong>
               <br />
-              <div className="justify-content-around">
+              <div className="justify-content-around border-container">
 
               {country.borders?.map((border) => (
                 <Link href={`${border}`} key={border}>
-                <Button variant="contained" className="padding-lr">{border}</Button>
+                <Button variant="contained" className="padding-lr border-btns">{border}</Button>
                 </Link>
                 ))}
                 </div>

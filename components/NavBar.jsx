@@ -20,7 +20,7 @@ export default function NavBar() {
         </Typography>
         <Button 
         startIcon={theme.palette.mode == "light" ?<NightlightRoundIcon/>:<LightModeIcon/>}
-        variant="text" onClick={themeToggle}  className={theme.palette.mode+'-text'}>
+        variant="text" onClick={themeToggle}  className={theme.palette.mode+'-text'} id="theme-btn">
           {theme.palette.mode == "light" ? "Dark" : "Light"} Mode
         </Button>
       </Toolbar>
