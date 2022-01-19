@@ -1,20 +1,14 @@
 import "../styles/globals.scss";
 import Layout from "../components/Layout";
-
-
-import {ThemeProviderContainer} from '../hooks/ThemeContext'
+import { ThemeProviderContainer } from "../hooks/ThemeContext";
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <ThemeProviderContainer>
-
-      <Layout  >
-   
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </ThemeProviderContainer>
-   
   );
 }
 

@@ -1,17 +1,11 @@
 import InputBase from "@mui/material/InputBase";
 import { Paper } from "@mui/material";
-
 import SearchIcon from "@mui/icons-material/Search";
-export default function CustomInputField({
-  
-  onChange,
-  params,
-  variant = "outlined",
-  value,
-}) {
+
+function CustomInputField({ onChange, params, variant = "outlined", value }) {
   return (
     <Paper elevation={2} sx={{ display: "flex" }}>
-      <SearchIcon sx={{ margin: "auto", marginLeft: 2 ,marginRight:2}} />
+      <SearchIcon sx={{ margin: "auto", marginLeft: 2, marginRight: 2 }} />
       <InputBase
         inputProps={params.inputProps}
         fullWidth
@@ -28,3 +22,5 @@ export default function CustomInputField({
     </Paper>
   );
 }
+
+export default CustomInputField;
