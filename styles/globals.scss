@@ -6,20 +6,23 @@
   src: url('/fonts/NunitoSans-Black.ttf');
  
 }
+$dark-text:hsl(209, 23%, 22%);
+$light-text:hsl(0, 0%, 100%);
 body{
+ 
   font-family: "Nunito" !important;
 }
 .filter-container{
   margin-top: 3rem;
-  padding:4rem 0rem ;
+  padding:4rem 1rem ;
   display:flex;
 }
 .dark-field{
-  background-color: hsl(209, 23%, 22%);
+  background-color: $dark-text;
   border:none !important;
 }
 .light-field{
-  background-color: hsl(0, 0%, 100%);
+  background-color: $light-text;
   
   border:none !important;
   &:focus{
@@ -37,11 +40,11 @@ body{
   border:none;
 }
 .dark-text{
-color: hsl(0, 0%, 100%) !important;
+color: $light-text !important;
 }
 .light-text{
   
-  color: hsl(209, 23%, 22%) !important;
+  color: $dark-text !important;
 }
 .link-styles{
   cursor:pointer;
@@ -53,7 +56,14 @@ color: hsl(0, 0%, 100%) !important;
 }
 .center-content{
   margin: auto;
+  height: 100%;
 }
-.CountryCard{
-  height: 46vh;
+.country-card{
+  height: 100%;
+  padding:1rem;
+  
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation{
+margin-top:0.4rem;
 }

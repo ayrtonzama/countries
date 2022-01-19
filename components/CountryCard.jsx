@@ -1,12 +1,13 @@
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import Link from "next/link";
-export default function CountryCard({ country }) {
+
+function CountryCard({ country }) {
   return (
     <>
-      <Link href={"/country/" + country.name} >
+      <Link href={"/country/" + country.name}>
         <Card
-        elevation={1}
-          sx={{ flex: 1,height:'100%' }}
+          elevation={1}
+          sx={{ flex: 1, height: "100%" }}
           className="link-styles"
           raised
         >
@@ -16,11 +17,12 @@ export default function CountryCard({ country }) {
             alt={country.name}
             image={country.flag}
           ></CardMedia>
-          <CardContent sx={{padding:'1rem'}}>
+          <CardContent sx={{ padding: "1rem" }}>
             <Typography variant="h5">{country.name}</Typography>
-            <br/>
+            <br />
             <Typography>
-              <strong>Population:</strong> {country.population.toLocaleString('en-US')}
+              <strong>Population:</strong>{" "}
+              {country.population.toLocaleString("en-US")}
             </Typography>
             <Typography>
               <strong>Region:</strong> {country.region}
@@ -34,3 +36,5 @@ export default function CountryCard({ country }) {
     </>
   );
 }
+
+export default CountryCard;

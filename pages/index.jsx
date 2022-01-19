@@ -4,7 +4,7 @@ import {
   getRegion,
   getAllCountriesSearch,
 } from "../pages/api/home";
-import { Grid, Container } from "@mui/material";
+import { Grid } from "@mui/material";
 import Filter from "../components/Filter";
 import { useState } from "react";
 
@@ -12,30 +12,36 @@ function Home({ data }) {
   const hardCountries = data;
   const [countries, setCountries] = useState(data);
   const [textSearch, setTextSearch] = useState("");
-  const [regionFilter, setRegion] = useState(null);
+  const [regionFilter] = useState(null);
 
+  /**
+   * Search for region and if world is selected goes to search method
+   *
+   * @param {*} region
+   */
   async function searchRegion(region) {
-   
-    if(region.target.value!=='World'){
-     
-
-      let results=await getRegion(region.target.value)
-      const remapping=results.data.map(result=>{
+    if (region.target.value !== "World") {
+      let results = await getRegion(region.target.value);
+      const remapping = results.data.map((result) => {
         return {
-        name:result.name.common,
-        population:result.population,
-        region:result.region,
-        flag:result.flags.png,
-        capital:result.capital[0]?result.capital[0]:''
-      }
-    })
-    // setRegion(region)
-    setCountries(remapping)
-  }else{
-    search("")
+          name: result.name.common,
+          population: result.population,
+          region: result.region,
+          flag: result.flags.png,
+          capital: result.capital[0] ? result.capital[0] : "",
+        };
+      });
+      setCountries(remapping);
+    } else {
+      search("");
+    }
   }
 
-  }
+  /**
+   * Search for text on api
+   *
+   * @param {*} text
+   */
   async function search(text) {
     let filtered;
     if (text == "") {
@@ -48,26 +54,26 @@ function Home({ data }) {
       setCountries(filtered.data);
     }
   }
+
   return (
     <div>
-      <div className="">
-        <Filter
-          countries={hardCountries}
-          search={textSearch}
-          onSearch={(text) => search(text)}
-          filter={regionFilter}
-          onFilter={(region) => searchRegion(region)}
-        ></Filter>
-      </div>
+      <Filter
+        countries={hardCountries}
+        search={textSearch}
+        onSearch={(text) => search(text)}
+        filter={regionFilter}
+        onFilter={(region) => searchRegion(region)}
+      ></Filter>
+
       <div className="countries-main">
         <Grid
           container
-          columnSpacing={{ xs: 2, md: 9 }}
-          rowSpacing={{ xs: 2, md: 9 }}
+          columnSpacing={{ xs: 1, md: 9 }}
+          rowSpacing={{ xs: 1, md: 9 }}
         >
           {countries.map((country) => (
-            <Grid item xs={12} md={3} sm={4} key={country.name}>
-              <div className="CountryCard">
+            <Grid item xs={12} md={3} sm={4} key={country.name} >
+              <div className="country-card">
                 <CountryCard country={country}></CountryCard>
               </div>
             </Grid>
@@ -78,9 +84,14 @@ function Home({ data }) {
   );
 }
 
+/**
+ * Initial load of countries
+ *
+ * @param {*} context
+ */
 Home.getInitialProps = async (ctx) => {
-  const countries = await getAllCountries();
-
-  return { data: countries.data };
+  const results = await getAllCountries();
+  return { data: results.data };
 };
+
 export default Home;

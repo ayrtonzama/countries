@@ -1,13 +1,11 @@
 import NavBar from "./NavBar";
 import { Box, Container } from "@mui/material";
 
-export default function Layout({ children}) {
-  
-  
+function Layout({ children }) {
   return (
     <>
       <Box xs={{ flexGrow: 1 }}>
-        <NavBar setTheme={''}></NavBar>
+        <NavBar setTheme={""}></NavBar>
       </Box>
       <main className="">
         <Container disableGutters={false} maxWidth="xl">
@@ -17,3 +15,5 @@ export default function Layout({ children}) {
     </>
   );
 }
+
+export default Layout;

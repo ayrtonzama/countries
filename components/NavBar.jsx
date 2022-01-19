@@ -4,7 +4,7 @@ import NightlightRoundIcon from "@mui/icons-material/NightlightRound";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useThemeUpdate } from "../hooks/ThemeContext";
 import Link from "next/link";
-export default function NavBar() {
+function NavBar() {
   const theme = useTheme();
   const themeToggle = useThemeUpdate();
 
@@ -15,7 +15,7 @@ export default function NavBar() {
           <Link href="/">
             <Typography
               variant="h5"
-              sx={{ flexGrow: 1 ,fontSize:{xs:16}}}
+              sx={{ flexGrow: 1 ,fontSize:{xs:16,md:24}}}
               className="link-styles"
             >
               <strong>Where in the world?</strong>
@@ -42,3 +42,6 @@ export default function NavBar() {
     </AppBar>
   );
 }
+
+
+export default NavBar
